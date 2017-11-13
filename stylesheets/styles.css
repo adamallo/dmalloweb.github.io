@@ -1,0 +1,260 @@
+/* Imports */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url('https://rsms.me/inter/inter-ui.css');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css); /* Media icons */
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/** My variables **/
+:root{
+  --main-col: #9BAD15;
+  --bold-col: #000000;
+  --background-col: #ffffff;
+  --text-col: #474747;
+}
+
+
+/** Global **/
+
+body{
+  background-color: var(--background-col);
+  font-family: 'Inter UI','Open Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text-col);
+  display: block;
+  max-width:900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.content::after {
+  display: block;
+  clear: both;
+  content: '';
+  float: none;
+  height: 1px;
+}
+
+.container
+{
+  width:auto;
+  margin: 0 auto;
+  position:relative;
+  display:flex;
+  justify-content: space-between;
+}
+
+/*p
+{
+  margin: 5px 0;
+  line-height: 25px;
+}*/
+
+a {
+  color: var(--main-col);
+  text-decoration: none;
+  font-weight: 500;
+  font-weight:
+  transition: color .75s ease;
+  -webkit-transition: color .75s ease;
+}
+
+a:hover {
+  color: var(--bold-col);
+}
+
+/** Text formatting **/
+
+strong
+{
+  font-weight: bold;
+  color: var(--bold-col);
+}
+
+h1
+{
+  margin: 35px 0 0 0;
+  font-size: 28px;
+}
+
+h2
+{
+  font-size: 24px;
+	color: black;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+/* Misc */
+
+.clear /*In case I need BRs to separate horizontaly*/
+{
+clear:both;
+}
+
+.hidden
+{
+  position:absolute;
+  clip: rect(1px 1px 1px 1px); /* IE6 & 7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Header */
+
+header{
+  background: #ffffff;
+  width:auto;
+  margin: 0 auto 20px auto; /* Remember top right bottom left */
+  font-family: "Garamond",serif;
+}
+
+header li {
+  float: left;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+header h1 {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+header h1 a{
+  text-decoration: none;
+	color:black;
+}
+
+header a:hover{
+  color-width:bold;
+}
+
+nav[role=navigation]{ /* To align vertically with icons */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header::after { /* to eliminate problems with floats */
+    display: block;
+    clear: both;
+    content: '';
+    float: none;
+    height: 1px;
+}
+/* Social media buttons */
+
+header .fa, header .ai {
+  color:var(--main-col);
+  font-size: 30px;
+	transition: all .5s ease;
+}
+
+header .fa:hover, header .ai:hover {
+	/*font-weight: bold;*/
+}
+
+.ai-google-scholar:hover {
+	color: #dd4b39;
+}
+
+.ai-researchgate:hover {
+	background-color: #0cb;
+	color: #ffffff;
+}
+
+.fa-github:hover, .fa-envelope:hover {
+	color: black;
+}
+
+.fa-skype:hover {
+	color:#00aff0;
+}
+
+.fa-twitter:hover {
+  color: #55ACEE;
+}
+
+/* Images*/
+
+.shadowed{
+box-shadow:0px 0px 20px rgba(0,0,0,0.4);
+}
+
+.rounded{
+   border-radius:3%
+   /*,box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"*/
+}
+
+/* pnews title */
+
+h2 .pnews .title {
+
+}
+
+/* Info */
+p.info {
+  text-align: right;
+}
+info {
+  color: #000000;
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  text-align: right;
+  position:relative;
+  bottom:0;
+}

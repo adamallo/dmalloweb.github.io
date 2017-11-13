@@ -1,0 +1,27 @@
+---
+layout: default
+permalink: "/blog/"
+---
+<h1 class="hidden">Blog:</h1> <!-- I may want to make this from class hidden and clip it in the CSS -->
+<section>
+  {% for post in site.categories.blogposts %}
+    <article class="post">
+      <a href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url }}{% endif %}"
+  class="post">
+        <h2 class="title">{{ post.title }}</h2>
+      </a>
+      <p class="post">{{ post.content }}</p>
+      <p class="info">
+        <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+          {{ post.date | date: "%b %d, %Y" }}
+        </info>
+      </p>
+    </article>
+  {% endfor %}
+</section>
+  <!--
+  <div class="breaker"></div>
+  <div class="end">
+    <a href="/archive/">Archived posts...</a>
+  </div>
+  -->
