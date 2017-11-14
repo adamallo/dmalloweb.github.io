@@ -8,24 +8,24 @@
     <meta name="keywords" content="{{ site.keywords }}"/>
     <meta name="description" content="{{ site.description }}"/>
     <title> {% if page.title %} {{ page.title }} | {% endif %} {{ site.title }} </title>
-    <link rel="stylesheet" href="{{ base }}/stylesheets/styles.css"/>
-    <link rel="stylesheet" href="{{ base }}/stylesheets/academicons.css"/>
+    <link rel="stylesheet" href="{{ "/stylesheets/styles.css" | relative_url }}"/>
+    <link rel="stylesheet" href="{{ "/stylesheets/academicons.css" | relative_url }}"/>
   </head>
   <body>
     <header>
       <div class="title">
-        <h1> <a href="{{ base }}">{{ site.title }}</a></h1>
+        <h1> <a href="{{ "/" | relative_url }}">{{ site.title }}</a></h1>
       </div>
       <div class="container">
         <nav role="navigation">
           <ul>
-            <li><a href="{{ base }}">News</a></li>
-            <li><a href="{{ base }}/about">About me</a></li>
-            <li><a href="{{ base }}/blog">Blog</a></li>
-            <li><a href="{{ base }}/research">Research</a></li>
-            <li><a href="{{ base }}/software">Software</a></li>
-            <li><a href="{{ base }}/courses">Courses</a></li>
-            <li><a href="{{ base }}/cv/cv.pdf">CV</a></li>
+            <li><a href="{{ "/" | relative_url }}">News</a></li>
+            <li><a href="{{ "/about" | relative_url }}">About me</a></li>
+            <li><a href="{{ "/blog" | relative_url }}">Blog</a></li>
+            <li><a href="{{ "/research" | relative_url }}">Research</a></li>
+            <li><a href="{{ "/software" | relative_url }}">Software</a></li>
+            <li><a href="{{ "/courses" | relative_url }}">Courses</a></li>
+            <li><a href="{{ "/cv/cv.pdf" | relative_url }}">CV</a></li>
           </ul>
         </nav>
         <nav role="social media">
