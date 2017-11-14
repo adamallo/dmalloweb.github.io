@@ -61,6 +61,7 @@ table {
   --bold-col: #000000;
   --background-col: #ffffff;
   --text-col: #474747;
+	--border-col: #e8e8e8;
 }
 
 
@@ -95,11 +96,11 @@ body{
   justify-content: space-between;
 }
 
-/*p
+p
 {
-  margin: 5px 0;
+  margin: 10px 0;
   line-height: 25px;
-}*/
+}
 
 a {
   color: var(--main-col);
@@ -246,9 +247,11 @@ h2 .pnews .title {
 /* Info */
 p.info {
   text-align: right;
+	margin: 0;
 }
 info {
   color: #000000;
+	font-size: smaller;
 }
 
 /* Footer */
@@ -257,4 +260,8 @@ footer {
   text-align: right;
   position:relative;
   bottom:0;
+	border-top: 1px solid var(--border-col);
+	font-size: smaller;
+	font-style: italic;
+	/*color:var(--border-col);*/
 }
