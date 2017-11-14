@@ -266,6 +266,12 @@ info {
 	font-size: smaller;
 }
 
+/* IMG */
+
+img.img_256 {
+	float:right;
+}
+
 /* Footer */
 footer {
   margin-top: 50px;
@@ -275,4 +281,28 @@ footer {
 	border-top: 1px solid var(--border-col);
 	font-size: smaller;
 	font-style: italic;
+}
+
+/* Resposive options */
+
+@media screen and (max-width: 450px){
+	img.img_256{
+		float:none;
+		display:block;
+		margin: 0 auto;
+	}
+	.container
+	{
+	  display:block;
+		text-align: right;
+	}
+	nav {
+		display: inline-block;
+	}
+}
+
+@media screen and (max-width: 316px){
+	header, section.content, footer {
+		margin: 0 0;
+	}
 }
