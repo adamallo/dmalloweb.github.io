@@ -81,6 +81,10 @@ body{
   margin: 0 auto;
 }
 
+header, section.content, footer {
+	margin: 0 30px;
+}
+
 .content::after {
   display: block;
   clear: both;
@@ -127,21 +131,24 @@ strong
   color: var(--bold-col);
 }
 
+h1, h2 {
+	font-family: 'Quattrocento', serif;
+	font-variant: small-caps;
+}
+
 h1
 {
   margin: 35px 0 0 0;
-  font-size: 28px;
-	font-family: 'Quattrocento', serif;
+  font-size: 30px;
 }
 
 h2
 {
-  font-size: 24px;
+  font-size: 26px;
 	color: black;
 	font-weight: bold;
 	margin-top: 20px;
 	margin-bottom: -5px; /** To stick to the paragraph **/
-	font-family: 'Quattrocento', serif;
 }
 
 /* Misc */
@@ -163,7 +170,7 @@ clear:both;
 header{
   background: #ffffff;
   width:auto;
-  margin: 0 auto 20px auto; /* Remember top right bottom left */
+  margin-bottom: 20px; /* Remember top right bottom left */
   font-family: "Garamond", "EB Garamond", Georgia, serif;
 	border-bottom: 1px solid var(--border-col);
 }
