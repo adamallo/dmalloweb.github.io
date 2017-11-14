@@ -6,12 +6,12 @@ permalink: "/blog/"
 <section>
   {% for post in site.categories.blogposts %}
     <article class="post">
-      <a href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url }}{% endif %}"
+      <a href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url | relative_url }}{% endif %}"
   class="post">
-        <h2 class="title">{{ post.title }}</h2>
+        <h2 class="title post">{{ post.title }}</h2>
       </a>
-      <p class="post">{{ post.content }}</p>
-      <p class="info">
+      <p class="post excerpt">{{ post.content }}</p>
+      <p class="info post">
         <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
           {{ post.date | date: "%b %d, %Y" }}
         </info>

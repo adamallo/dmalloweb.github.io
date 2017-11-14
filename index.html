@@ -1,24 +1,8 @@
 ---
 layout: default
 ---
-
-<h1 class="hidden">News:</h1> <!-- I may want to make this from class hidden and clip it in the CSS -->
-<section>
-  {% for post in site.categories.news %}
-    <article class="pnews">
-      <h2 class="title">{{ post.title }}</h2>
-      <p class="pnews">{{ post.content }}</p>
-      <p class="info">
-        <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
-          {{ post.date | date: "%b %d, %Y" }}
-        </info>
-      </p>
-    </article>
-  {% endfor %}
-</section>
-    <!--
-    <div class="breaker"></div>
-    <div class="end">
-      <a href="/archive/">Archived news...</a>
-    </div>
-    -->
+<h1 class="hidden">About me</h1>
+<article>
+  <img class="rounded shadowed" style="float:right" src="{{ "/images/dm_portrait.jpg" | relative_url }}" width=256>
+  Hello! My name is Diego Mallo, and I am a postdoctoral research associate with <a href="http://www.maleylab.org/">Carlo Maley's lab</a> at <a href="https://biodesign.asu.edu/personalized-diagnostics">Biodesign Center for Personalized Diagnostics</a>.
+</article>

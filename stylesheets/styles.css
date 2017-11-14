@@ -2,6 +2,8 @@
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url('https://rsms.me/inter/inter-ui.css');
+@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
+@import url(https://fonts.googleapis.com/css?family=Quattrocento);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css); /* Media icons */
 
 
@@ -98,7 +100,7 @@ body{
 
 p
 {
-  margin: 10px 0;
+  margin: 5px 0;
   line-height: 25px;
 }
 
@@ -106,13 +108,15 @@ a {
   color: var(--main-col);
   text-decoration: none;
   font-weight: 500;
-  font-weight:
-  transition: color .75s ease;
-  -webkit-transition: color .75s ease;
+  transition: all .75s ease;
 }
 
 a:hover {
   color: var(--bold-col);
+}
+
+a:active {
+	background-color: var(--bold-col);
 }
 
 /** Text formatting **/
@@ -127,6 +131,7 @@ h1
 {
   margin: 35px 0 0 0;
   font-size: 28px;
+	font-family: 'Quattrocento', serif;
 }
 
 h2
@@ -135,7 +140,8 @@ h2
 	color: black;
 	font-weight: bold;
 	margin-top: 20px;
-	margin-bottom: 15px;
+	margin-bottom: -5px; /** To stick to the paragraph **/
+	font-family: 'Quattrocento', serif;
 }
 
 /* Misc */
@@ -158,7 +164,8 @@ header{
   background: #ffffff;
   width:auto;
   margin: 0 auto 20px auto; /* Remember top right bottom left */
-  font-family: "Garamond",serif;
+  font-family: "Garamond", "EB Garamond", Georgia, serif;
+	border-bottom: 1px solid var(--border-col);
 }
 
 header li {
@@ -170,15 +177,12 @@ header li {
 header h1 {
   font-weight: bold;
   font-size: 60px;
+	font-family: inherit;
 }
 
 header h1 a{
   text-decoration: none;
 	color:black;
-}
-
-header a:hover{
-  color-width:bold;
 }
 
 nav[role=navigation]{ /* To align vertically with icons */
@@ -238,17 +242,18 @@ box-shadow:0px 0px 20px rgba(0,0,0,0.4);
    /*,box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"*/
 }
 
-/* pnews title */
+/* blog post title */
 
-h2 .pnews .title {
-
+h2.post {
+	color:inherit;
 }
 
 /* Info */
 p.info {
   text-align: right;
-	margin: 0;
+	margin: -10px 0px 0px 0px;
 }
+
 info {
   color: #000000;
 	font-size: smaller;
@@ -263,5 +268,4 @@ footer {
 	border-top: 1px solid var(--border-col);
 	font-size: smaller;
 	font-style: italic;
-	/*color:var(--border-col);*/
 }
