@@ -64,6 +64,7 @@ table {
   --background-col: #ffffff;
   --text-col: #474747;
 	--border-col: #e8e8e8;
+	--sec-col: #f4960f;
 }
 
 
@@ -76,15 +77,30 @@ body{
   line-height: 1.5;
   color: var(--text-col);
   display: block;
-  max-width:900px;
+  max-width:960px;
   width: 100%;
   margin: 0 auto;
 }
 
-header, section.content, footer {
-	margin: 0 30px;
+.active {
+	color: var(--sec-col);
+	font-weight: bold;
 }
 
+body.is-loading *, body.is-loading *:before, body.is-loading *:after {
+	animation: none !important;
+	transition: none !important;
+}
+
+header, section.content, footer {
+	margin: 0 30px 27px 30px; /*One line in the vertical*/
+}
+
+header {
+	margin-top: 27px;
+}
+
+/* To clean after floats */
 .content::after {
   display: block;
   clear: both;
@@ -93,19 +109,26 @@ header, section.content, footer {
   height: 1px;
 }
 
+/* Flex containers */
 .container
 {
   width:auto;
   margin: 0 auto;
   position:relative;
   display:flex;
-  justify-content: space-between;
+}
+
+header .container {
+	  justify-content: space-between;
+}
+
+body .container {
+
 }
 
 p
 {
-  margin: 5px 0;
-  line-height: 25px;
+  margin-bottom: 27px;
 }
 
 a {
@@ -117,10 +140,6 @@ a {
 
 a:hover {
   color: var(--bold-col);
-}
-
-a:active {
-	background-color: var(--bold-col);
 }
 
 /** Text formatting **/
@@ -147,15 +166,14 @@ h2
   font-size: 26px;
 	color: black;
 	font-weight: bold;
-	margin-top: 20px;
-	margin-bottom: -5px; /** To stick to the paragraph **/
+	margin-top: 13px;
 }
 
 /* Misc */
 
 .clear /*In case I need BRs to separate horizontaly*/
 {
-clear:both;
+	clear:both;
 }
 
 .hidden
@@ -196,6 +214,9 @@ nav[role=navigation]{ /* To align vertically with icons */
   display: flex;
   flex-direction: column;
   justify-content: center;
+	font-size: 20px;
+	font-family: 'Quattrocento', serif;
+	font-weight:bolder;
 }
 
 header::after { /* to eliminate problems with floats */
@@ -251,7 +272,7 @@ box-shadow:0px 0px 20px rgba(0,0,0,0.4);
 
 /* blog post title */
 
-h2.post {
+h2.shortpost {
 	color:inherit;
 }
 
@@ -264,6 +285,113 @@ p.info {
 info {
   color: #000000;
 	font-size: smaller;
+}
+
+/* Tiles */
+
+.tiles {
+	display: flex;
+}
+
+.container.tiles {
+	flex-wrap:wrap;
+}
+
+.tiles a{
+	color: black;
+	transition: color 0.5s ease;
+}
+
+article.tiles:hover a {
+	color: white;
+}
+
+article.tiles {
+	background-color: var(--border-col);
+	align-items: center;
+	display: flex;
+	transition: transform 0.5s ease, opacity 0.5s ease, filter 1s ease;
+	padding: 4em 4em 4em 4em ;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-size: contain;
+	cursor: default;
+	/**height: 40vh;
+	max-height: 40em;
+	min-height: 23em;**/
+	overflow: hidden;
+	position: relative;
+	width: 40%;
+	box-sizing: border-box;
+}
+
+h2.tiles {
+	margin:auto;
+	padding:0;
+	text-align: center;
+}
+
+article:nth-child(4n - 1).tiles.neven, article:nth-child(4n - 2).tiles.neven {
+	width: 60%;
+}
+
+article:nth-child(4n).tiles:before {
+	background-color: var(--main-col);
+}
+
+article:nth-child(4n + 1).tiles:before{
+	background-color: #159BAD;
+}
+
+article:nth-child(4n + 2).tiles:before{
+	background-color: #AD159B;
+
+}
+
+article:nth-child(4n + 3).tiles:before{
+	background-color: var(--sec-col);
+}
+
+article:nth-child(4n - 1).tiles.nodd , article:nth-child(4n).tiles.nodd{
+	width: 60%;
+}
+
+article:nth-child(1).tiles.nodd{
+	width: 100%;
+}
+
+.tiles article:before {
+	transition: opacity 0.5s ease;
+	bottom: 0;
+	content: '';
+	display: block;
+	height: 100%;
+	left: 0;
+	opacity: 0.35;
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+}
+
+.tiles article:after {
+	/*background-color: rgba(36, 41, 67, 0.25);*/
+	content: '';
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.front {
+	z-index: 100;
+	position: inherit;
+}
+
+.tiles article:hover:before {
+	opacity: 1;
 }
 
 /* IMG */
@@ -291,11 +419,16 @@ footer {
 		display:block;
 		margin: 0 auto;
 	}
-	.container
+
+	.container {
+		display:block;
+	}
+
+	header .container
 	{
-	  display:block;
 		text-align: right;
 	}
+
 	nav {
 		display: inline-block;
 	}

@@ -7,8 +7,33 @@ author: "Diego Mallo"
 
 #Jekyll options
 include: ["_pages"]
-permalink: /:title/
+permalink: pretty
 baseurl: /dmalloweb.github.io
+
+#My collections
+collections:
+  papers:
+    output: false
+  projects:
+    output: true
+  software:
+    output: true
+  courses:
+    output: true
+
+defaults:
+  - scope:
+      type: software
+    values:
+      layout: software_page
+  - scope:
+      type: courses
+    values:
+      layout: course_page
+  - scope:
+      type: projects
+    values:
+      layout: default ##This may change to project in the future if I have a specific layout
 
 #Options for running Jekyll locally
 port: 3000 # change server port to 3000

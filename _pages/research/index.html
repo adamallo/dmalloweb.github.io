@@ -1,0 +1,29 @@
+---
+layout: default
+permalink: "/research/"
+---
+<section>
+  <h1 class="hidden">Research:</h1>
+  <article class="block">
+    <h2 class="hidden">General description:</h2>
+    <p>My research is focused on phylogenetics and evolutionary modeling. Specifically, I love to develop new computer programs to solve my own evolutionary questions and help others solve theirs.</p><p>You can find below a short description of the {{ site.projects | size }} most exciting projects I am actively working on nowadays linked to more extensive descriptions of them.
+    </p>
+  </article>
+</section>
+<section class="container tiles">
+  <h1 class="hidden">Projects:</h1>
+  <div class="container tiles">
+  {% for project in site.projects %}
+    <article class="shortpost tiles {{ site.projects | size | modulo:2 | replace: '0','neven' | replace: '1','nodd' }}">
+      <!-- style="{% if project.picture %}background-image: url('{{project.picture | relative_url}}');{% else %}{{" "}}{% endif %}">-->
+      <h2 class="title shortpost tiles front"><a href="{% if project.external_url %}{{ project.external_url }}{% else %}{{ project.url | relative_url }}{% endif %}">{{ project.title }}</a></h2>
+      <!--
+        <p class="shortpost excerpt tiles">
+          {% if project.short_description %} {{ project.short_description }} {% else %} {{ project.excerpt | remove: '<p>' | remove: '</p>' }} {% endif %}
+        </p>
+      -->
+    </article>
+  {% endfor %}
+  </div>
+</section>
+</div>

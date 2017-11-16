@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Working on my new web page
 tags: [web, developer, new project]
 ---

@@ -19,13 +19,14 @@
       <div class="container">
         <nav role="navigation">
           <ul>
-            <li><a href="{{ "/" | relative_url }}">About me</a></li>
-            <li><a href="{{ "/news" | relative_url }}">News</a></li>
-            <li><a href="{{ "/blog" | relative_url }}">Blog</a></li>
-            <li><a href="{{ "/research" | relative_url }}">Research</a></li>
-            <li><a href="{{ "/software" | relative_url }}">Software</a></li>
-            <li><a href="{{ "/courses" | relative_url }}">Courses</a></li>
-            <li><a href="{{ "/cv/cv.pdf" | relative_url }}">CV</a></li>
+            <!-- test {{ thisurl }}-->
+            <li><a href="{{ "/" | relative_url }}" {% if page.url == "/" %}{{ 'class="active"' }}{% endif %}>About me</a></li>
+            <li><a href="{{ "/news" | relative_url }}" {% if page.url contains "/news" %}{{ 'class="active"' }}{% endif %}>News</a></li>
+            <li><a href="{{ "/blog" | relative_url }}" {% if page.url contains "/blog" %}{{ 'class="active"' }}{% endif %}>Blog</a></li>
+            <li><a href="{{ "/research" | relative_url }}" {% if page.url contains "/research" or page.url contains "/projects" %}{{ 'class="active"' }}{% endif %}>Research</a></li>
+            <li><a href="{{ "/software" | relative_url }}" {% if page.url contains "/software" %}{{ 'class="active"' }}{% endif %}>Software</a></li>
+            <li><a href="{{ "/courses" | relative_url }}" {% if page.url contains "/courses" %}{{ 'class="active"' }}{% endif %}>Courses</a></li>
+            <li><a href="{{ "/cv/cv.pdf" | relative_url }}" {% if page.url contains "/cv" %}{{ 'class="active"' }}{% endif %}>CV</a></li>
           </ul>
         </nav>
         <nav role="social media">
@@ -70,7 +71,7 @@
       <h2 class="hidden">Footer:</h2> <!--HTML5-->
       <section id="copyleft">
         <h3 class="hidden">Copyleft notice</h3>
-        <p>This content is licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3 license</a> by <a href="/about/">Diego Mallo<a/></p>
+        <p>This content is licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3 license</a> by <a href="{{ "/" | relative_url }}">Diego Mallo<a/></p>
       </section>
     </footer>
   </body>

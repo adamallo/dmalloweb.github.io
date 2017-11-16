@@ -4,21 +4,19 @@ permalink: "/news/"
 ---
 
 <h1 class="hidden">News:</h1> <!-- I may want to make this from class hidden and clip it in the CSS -->
-<section>
-  {% for pnew in site.categories.news %}
-    <article class="pnews">
-      <h2 class="title pnews">{{ pnew.title }}</h2>
-      <!--<p class="pnews excerpt"> removing this to use the <p>s coming from the new. I may need to change this-->
-      {{ pnew.content }}
-      <!--</p>-->
-      <p class="info pnews">
-        <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
-          {{ pnew.date | date: "%b %d, %Y" }}
-        </info>
-      </p>
-    </article>
-  {% endfor %}
-</section>
+{% for pnew in site.categories.news %}
+  <article class="pnews">
+    <h2 class="title pnews">{{ pnew.title }}</h2>
+    <!--<p class="pnews excerpt"> removing this to use the <p>s coming from the new. I may need to change this-->
+    {{ pnew.content }}
+    <!--</p>-->
+    <p class="info pnews">
+      <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+        {{ pnew.date | date: "%b %d, %Y" }}
+      </info>
+    </p>
+  </article>
+{% endfor %}
     <!--
     <div class="breaker"></div>
     <div class="end">
